@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー - AI執事の日記</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1 {
+            font-size: 24px;
+            color: #111;
+            border-bottom: 2px solid #8e44ad;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-top: 30px;
+            border-left: 4px solid #8e44ad;
+            padding-left: 10px;
+        }
+        p, li {
+            font-size: 15px;
+            color: #555;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>プライバシーポリシー</h1>
+    <p>本アプリケーション（以下、「当アプリ」といいます）は、ユーザーの個人情報の保護を極めて重要と考え、以下の通りプライバシーポリシーを定めます。</p>
+
+    <h2>1. 取得する情報および利用目的</h2>
+    <p>当アプリでは、AIによる日記の自動生成およびライフログの記録のために、以下の情報を取得・利用します。</p>
+    <ul>
+        <li><strong>ヘルスケアデータ（歩数、アクティブエネルギー、移動距離、歩行速度など）：</strong> ユーザーの1日の活動を振り返り、日記の本文を作成するために利用します。</li>
+        <li><strong>位置情報：</strong> ユーザーが訪れた場所の記録および日記の生成に利用します。</li>
+        <li><strong>入力されたAPIキー：</strong> ユーザー自身が取得したGoogle Gemini APIを利用して日記を生成する際の認証に利用します。</li>
+    </ul>
+
+    <h2>2. データの保存と外部送信について</h2>
+    <p>当アプリは、ユーザーのプライバシーを最優先に設計されています。</p>
+    <ul>
+        <li>ユーザーのヘルスケアデータ、位置情報、および入力されたAPIキーは、ユーザーのデバイス内（Local Storage / UserDefaults）にのみ安全に保存され、当開発者が管理するサーバーへ収集・蓄積されることはありません。</li>
+        <li><strong>「設定なしですぐに使う（サブスクリプション）」モードをご利用の場合：</strong> AI日記生成の処理を行うため、ライフログテキストデータのみが外部の通信サーバー（Cloudflare）を経由してGoogle Gemini APIへ送信されます。このデータは日記生成の処理にのみ一時的に使用され、サーバー上に保存または学習に利用されることはありません。</li>
+    </ul>
+
+    <h2>3. アプリ内課金（サブスクリプション）について</h2>
+    <p>当アプリでは、App Storeを介したアプリ内課金（定期購読・一括解放）を提供しています。</p>
+    <ul>
+        <li>決済および購入情報の管理はすべてApple Inc.のシステムを通じて安全に行われます。当開発者がユーザーのクレジットカード情報や決済詳細を直接取得・保持することはありません。</li>
+        <li>「設定なしですぐに使う（月額プラン）」をご契約中のお客様が「自分のAPIキーを使う」モードに切り替えた場合、アプリ内の切り替えのみではサブスクリプションは自動解約されません。お手数ですが、お客様ご自身でiOSの「設定」アプリより解約手続きを行ってください。</li>
+    </ul>
+
+    <h2>4. プライバシーポリシーの変更</h2>
+    <p>当アプリは、法令の制定・改正やアプリのアップデートに伴い、本プライバシーポリシーを随時変更することがあります。</p>
+
+    <h2>5. お問い合わせ</h2>
+    <p>当アプリにおける個人情報の取り扱いに関するお問い合わせは、App Storeのサポート窓口よりご連絡ください。</p>
+
+    <div class="footer">
+        <p>制定日：2026年6月23日</p>
+        <p>&copy; 2026 LogAIm All Rights Reserved.</p>
+    </div>
+</div>
+
+</body>
+</html>
