@@ -1,304 +1,304 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>夢日記 - ヘルプ・よくある質問</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* アコーディオンの開閉アニメーション用 */
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
-        }
-        .faq-block.active .faq-content {
-            max-height: 500px;
-            transition: max-height 0.3s ease-in;
-        }
-        .faq-icon {
-            transition: transform 0.2s ease;
-        }
-        .faq-block.active .faq-icon {
-            transform: rotate(90deg);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よくある質問 | 夢日記</title>
+<style>
+  :root {
+    --bg: #faf9f7;
+    --card-bg: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5a5a5a;
+    --accent: #6b4fa0;
+    --border: #e8e5e0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+  }
+  .header {
+    text-align: center;
+    padding: 48px 20px 32px;
+  }
+  .header h1 {
+    font-size: 1.6rem;
+    margin: 0 0 8px;
+  }
+  .header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+  }
+  .category {
+    margin-bottom: 36px;
+  }
+  .category-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 0 14px;
+    padding-left: 2px;
+  }
+  details {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  summary {
+    padding: 16px 18px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.98rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    font-size: 1.3rem;
+    color: var(--accent);
+    font-weight: 300;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  details[open] summary::after {
+    transform: rotate(45deg);
+  }
+  .answer {
+    padding: 0 18px 18px;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+  }
+  .answer p {
+    margin: 0 0 10px;
+  }
+  .answer p:last-child { margin-bottom: 0; }
+  .answer .note {
+    font-size: 0.85rem;
+    color: #8a8a8a;
+  }
+  .answer .steps {
+    margin: 8px 0;
+    padding-left: 4px;
+  }
+  .answer .steps p {
+    margin: 0 0 6px;
+  }
+  .answer strong {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+  .footer {
+    text-align: center;
+    color: #aaa;
+    font-size: 0.8rem;
+    padding: 20px;
+  }
+</style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body>
 
-    <div class="max-w-2xl mx-auto px-4 py-8">
-        <header class="text-center mb-10">
-            <h1 class="text-2xl font-bold text-gray-900 tracking-tight">ヘルプ・よくある質問</h1>
-            <p class="text-sm text-gray-500 mt-2">夢日記アプリの操作・設定に関するガイド</p>
-        </header>
+<div class="header">
+  <h1>✦ よくある質問</h1>
+  <p>夢日記アプリについてのFAQ</p>
+</div>
 
-        <section class="mb-8">
-            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 px-1">⏰ 自動生成・通知について</h2>
-            <div class="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100 shadow-sm overflow-hidden">
-                
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. 朝の指定時間になっても通知が届きません。</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600 space-y-2">
-                            <p>以下の3点をご確認ください。</p>
-                            <ol class="list-decimal pl-5 space-y-1">
-                                <li>iPhoneの「設定」アプリ ➔「通知」➔「夢日記」で通知の許可がオンになっているか。</li>
-                                <li>iPhoneが「集中モード（睡眠や仕事など）」になっており、通知が制限されていないか。</li>
-                                <li>夜間のシステム制限で自動生成が間に合わなかった場合でも、自動生成のスケジュールで設定した時間に通知を受け取り、アプリを開いた瞬間に自動執筆が開始されますのでご安心ください。</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
+<div class="container">
 
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. 夜間の自動生成が成功するための条件は？</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600">
-                            <p>本アプリの自動生成はiOSのバックグラウンドシステムを利用しています。確実な実行のため、就寝時に【端末がWi-Fiに接続されていること】【充電器に接続されていること】を推奨します。これらが揃っているとiOSシステムが処理を実行しやすくなり、成功率が大幅にアップします。</p>
-                        </div>
-                    </div>
-                </div>
+  <!-- ⏰ カテゴリー1: 自動生成と通知 -->
+  <div class="category">
+    <h2 class="category-title">⏰ 自動生成・通知について</h2>
 
-            </div>
-        </section>
+    <details>
+      <summary>朝の指定時間になっても通知が届きません。</summary>
+      <div class="answer">
+        <p>以下の3点をご確認ください。</p>
+        <p>1. iPhoneの「設定」アプリ ➔「通知」➔「夢日記」で通知の許可がオンになっているか。</p>
+        <p>2. iPhoneが「集中モード（睡眠や仕事など）」になっており、通知が制限されていないか。</p>
+        <p>3. 夜間のシステム制限で自動生成が間に合わなかった場合でも、自動生成のスケジュールで設定した時間に通知を受け取り、アプリを開いた瞬間に自動執筆が開始されますのでご安心ください。</p>
+      </div>
+    </details>
 
-        <section class="mb-8">
-            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 px-1">🔑 Google APIキーについて</h2>
-            <div class="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100 shadow-sm overflow-hidden">
-                
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. 無料で使い続けることはできますか？</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600">
-                            <p>はい、ご自身で取得されたGoogleのAPIキーを設定していただければ、Gemini AIの無料利用枠の範囲内で、アプリに料金を支払うことなく完全無料で使い続けることが可能です。</p>
-                        </div>
-                    </div>
-                </div>
+    <details>
+      <summary>夜間の自動生成が成功するための条件は？</summary>
+      <div class="answer">
+        <p>本アプリの自動生成はiOSのバックグラウンドシステムを利用しています。確実な実行のため、就寝時に【端末がWi-Fiに接続されていること】【充電器に接続されていること】を推奨します。これらが揃っているとiOSシステムが処理を実行しやすくなり、成功率が大幅にアップします。</p>
+      </div>
+    </details>
+  </div>
 
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. Google APIキーの取得・設定方法がよくわかりません。</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600 space-y-3">
-                            <p>Gemini AIを無料で利用するためのAPIキーは、以下の手順で取得してアプリに設定できます。</p>
-                            <div class="border-l-2 border-blue-500 pl-3 my-2">
-                                <p class="font-semibold text-gray-800 mb-1">【取得と設定の手順】</p>
-                                <ol class="list-decimal pl-4 space-y-1">
-                                    <li>ブラウザで「Google AI Studio」と検索してアクセスする</li>
-                                    <li>お手持ちのGoogleアカウントでログインする（Googleアカウントがない場合は、作成して下さい）</li>
-                                    <li>画面上の「API Keys」&gt;「APIキーを作成」ボタンをタップ</li>
-                                    <li>次の画面で「Gemini API Key」を選択し、キーを作成する</li>
-                                    <li>発行された「AQ...」から始まる長い文字列をコピーする</li>
-                                    <li>本アプリの「設定」画面を開き、「APIキー設定」欄にそのまま貼り付けて保存する</li>
-                                </ol>
-                            </div>
-                            <p class="text-xs text-gray-400">※APIキーは完全無料で取得でき、勝手に料金が発生することはありませんのでご安心ください。コピーの際に前後に余計な空白（スペース）が入らないようご注意ください。</p>
-                        </div>
-                    </div>
-                </div>
+  <!-- 🔑 カテゴリー2: Google APIキー -->
+  <div class="category">
+    <h2 class="category-title">🔑 Google APIキーについて</h2>
 
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. APIキーを設定したのにエラーで生成できない。</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600">
-                            <p>APIキーのコピー時に前後に余計な「スペース（空白文字）」が入り込んでいないかご確認ください。また、キーを取得したばかりの直後は、Google側のシステムに反映されるまで数分〜最大10分程度かかる場合がありますので、少し時間を置いてから再度お試しください。</p>
-                        </div>
-                    </div>
-                </div>
+    <details>
+      <summary>無料で使い続けることはできますか？</summary>
+      <div class="answer">
+        <p>はい、ご自身で取得されたGoogleのAPIキーを設定していただければ、Gemini AIの無料利用枠の範囲内で、アプリに料金を支払うことなく完全無料で使い続けることが可能です。</p>
+      </div>
+    </details>
 
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. 1日に何回まで日記を生成できますか？</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600 space-y-3">
-                            <p>ご利用のモード（独自のAPIキーまたはサブスクリプション）によって、1日の生成回数の上限が異なります。</p>
-                            <div class="space-y-2">
-                                <div>
-                                    <p class="font-semibold text-gray-800">・ご自身のGoogle APIキーを利用する場合：</p>
-                                    <p class="pl-2">Google側が提供している無料利用枠の範囲内で、ご利用いただけます。ただし「1分間の回数制限」や「混雑時にエラーになる可能性があります」</p>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-800">・サブスクプラン（APIキー設定なし）を利用する場合：</p>
-                                    <p class="pl-2">1日あたり最大3回までAIによる日記生成・再生成をご利用いただけます。</p>
-                                </div>
-                            </div>
-                            <p class="text-xs text-gray-400">※夜間の自動バックグラウンド生成は、別に1回分の回数が設けられてます。</p>
-                        </div>
-                    </div>
-                </div>
+    <details>
+      <summary>Google APIキーの取得・設定方法がよくわかりません。</summary>
+      <div class="answer">
+        <p>Gemini AIを無料で利用するためのAPIキーは、以下の手順で取得してアプリに設定できます。</p>
+        <p><strong>【取得と設定の手順】</strong></p>
+        <div class="steps">
+          <p>1. ブラウザで「Google AI Studio」と検索してアクセスする</p>
+          <p>2. お手持ちのGoogleアカウントでログインする（Goolgeアカウントがない場合は、作成して下さい）</p>
+          <p>3. 画面上の「API Keys」&gt;「APIキーを作成」ボタンをタップ</p>
+          <p>4. 次の画面で「Gemini API Key」を選択し、キーを作成する</p>
+          <p>5. 発行された「A...」から始まる長い文字列（39文字）をコピーする</p>
+          <p>6. 本アプリの「設定」画面を開き、「APIキー設定」欄にそのまま貼り付けて保存する</p>
+        </div>
+        <p class="note">※APIキーは完全無料で取得でき、勝手に料金が発生することはありませんのでご安心ください。コピーの際に前後に余計な空白（スペース）が入らないようご注意ください。</p>
+      </div>
+    </details>
 
-            </div>
-        </section>
+    <details>
+      <summary>APIキーを設定したのにエラーで生成できない。</summary>
+      <div class="answer">
+        <p>APIキーのコピー時に前後に余計な「スペース（空白文字）」が入り込んでいないかご確認ください。また、キーを取得したばかりの直後は、Google側のシステムに反映されるまで数分〜最大10分程度かかる場合がありますので、少し時間を置いてから再度お試しください。</p>
+      </div>
+    </details>
 
-        <section class="mb-8">
-            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 px-1">✍️ 日記の生成品質について</h2>
-            <div class="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100 shadow-sm overflow-hidden">
-                
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. 職業のキャラクターがうまく反映されない。</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600 space-y-2">
-                            <p>本アプリのキャラクター設定は15文字以内で入力が可能です。AIがその人物像を最大限に想像して執筆する特徴があります。</p>
-                            <p>「ツンデレな女子高生」「寡黙な40代職人」のように、独自の立場や性格、特徴的な口調をギュッと凝縮して入力していただくと、AIがそのキャラクター性を捉えやすくなり、再現クオリティが向上します。</p>
-                        </div>
-                    </div>
-                </div>
+    <details>
+      <summary>1日に何回まで日記を生成できますか？</summary>
+      <div class="answer">
+        <p>ご利用のモード（独自のAPIキーまたはサブスクリプション）によって、1日の生成回数の上限が異なります。</p>
+        <p><strong>・ご自身のGoogle APIキーを利用する場合：</strong><br>
+        Google側が提供している無料利用枠の範囲内で、ご利用いただけます。ただし「1分間の回数制限」や「混雑時にエラーになる可能性があります」</p>
+        <p><strong>・サブスクプラン（APIキー設定なし）を利用する場合：</strong><br>
+        1日あたり3回までAIによる日記生成・再生成をご利用いただけます。</p>
+        <p class="note">※夜間の自動バックグラウンド生成は、別に1回分の回数が設けられてます。</p>
+      </div>
+    </details>
+  </div>
 
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. 700文字制限解除にしたのに日記が短い時がある。</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600">
-                            <p>その日の「行動タイムライン（滞在場所や時間）」のデータが極端に少ない場合（例：1日中自宅にいたなど）、AIが不自然な嘘（妄想）を膨らませすぎないよう、自動的に文字数を調整して綺麗な日記に仕上げる仕様になっています。移動やアクティビティが多い日ほど、より深みのある長編日記が執筆されます。</p>
-                        </div>
-                    </div>
-                </div>
+  <!-- ✍️ カテゴリー3: 日記の生成品質 -->
+  <div class="category">
+    <h2 class="category-title">✍️ 日記の生成品質について</h2>
 
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. 日記のテーマは毎日変更しても大丈夫ですか？</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600 space-y-2">
-                            <p>はい、いつでも自由に変更していただいて問題ありません。設定画面で選んだテーマ（お金、恋愛、仕事、非現実など）は、次に「新しく作成する日記」または「手動で再生成する日記」から即座に反映されます。</p>
-                            <p>「今日は旅行に行ったから旅行テーマにしよう」「今日は不思議な一日だったから非現実テーマで」といったように、その日の気分や出来事に合わせて毎日自由に切り替えてAIの表現の変化をお楽しみください。</p>
-                            <p class="text-xs text-gray-400">※テーマを変えても、過去に作成して保存された日記の本文が勝手に書き換わることはありませんのでご安心ください。</p>
-                        </div>
-                    </div>
-                </div>
+    <details>
+      <summary>職業のキャラクターがうまく反映されない。</summary>
+      <div class="answer">
+        <p>本アプリのキャラクター設定は15文字以内で入力が可能です。AIがその人物像を最大限に想像して執筆する特徴があります。</p>
+        <p>「ツンデレな女子高生」「寡黙な40代職人」のように、独自の立場や性格、特徴的な口調をギュッと凝縮して入力していただくと、AIがそのキャラクター性を捉えやすくなり、再現クオリティが向上します。</p>
+      </div>
+    </details>
 
-            </div>
-        </section>
+    <details>
+      <summary>700文字制限解除にしたのに日記が短い時がある。</summary>
+      <div class="answer">
+        <p>その日の「行動タイムライン（滞在場所や時間）」のデータが極端に少ない場合（例：1日中自宅にいたなど）、AIが不自然な嘘（妄想）を膨らませすぎないよう、自動的に文字数を調整して綺麗な日記に仕上げる仕様になっています。移動やアクティビティが多い日ほど、より深みのある長編日記が執筆されます。</p>
+      </div>
+    </details>
 
-        <section class="mb-8">
-            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 px-1">📊 データ連携・その他</h2>
-            <div class="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100 shadow-sm overflow-hidden">
-                
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. 歩数などのデータが日記に反映されません。</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600">
-                            <p>iPhoneの「設定」アプリ ➔「プライバシーとセキュリティ」 ➔「ヘルスケア」 ➔「夢日記」から、データの読み込みがすべて許可されているかご確認ください。</p>
-                        </div>
-                    </div>
-                </div>
+    <details>
+      <summary>日記のテーマは毎日変更しても大丈夫ですか？</summary>
+      <div class="answer">
+        <p>はい、いつでも自由に変更していただいて問題ありません。設定画面で選んだテーマ（お金、恋愛、仕事、非現実など）は、次に「新しく作成する日記」または「手動で再生成する日記」から即座に反映されます。</p>
+        <p>「今日は旅行に行ったから旅行テーマにしよう」「今日は不思議な一日だったから非現実テーマで」といったように、その日の気分や出来事に合わせて毎日自由に切り替えてAIの表現の変化をお楽しみください。</p>
+        <p class="note">※テーマを変えても、過去に作成して保存された日記の本文が勝手に書き換わることはありませんのでご安心ください。</p>
+      </div>
+    </details>
+  </div>
 
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. すべてのライフログを連携（オンに）しないと日記は作れませんか？</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600">
-                            <p>いいえ、ヘルスケアデータや位置情報など、一部のライフログデータをオフにしている、または一部しか使わない場合であっても、日記の自動生成・手動生成は問題なく実行されます。その場合は、許可されている残りのデータ（または文字入力した情報のみ）をもとに、AIが不自然にならないよう最適な文章を構築します。</p>
-                        </div>
-                    </div>
-                </div>
+  <!-- 📊 カテゴリー4: データ連携・その他 -->
+  <div class="category">
+    <h2 class="category-title">📊 データ連携・その他</h2>
 
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. 行動タイムライン（滞在場所）をどうしても使用したくない。</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600 space-y-2">
-                            <p>行動タイムラインはiPhoneの「位置情報サービス」を利用しています。このデータが日記に反映されるのを完全に防ぎたい（オフにしたい）場合は、以下の手順でiPhone自体の設定を変更してください。</p>
-                            <div class="bg-white p-3 rounded border border-gray-100 text-xs space-y-1">
-                                <p class="font-bold text-gray-700">手順：</p>
-                                <p>1. iPhoneの「設定」アプリを開く</p>
-                                <p>2.「プライバシーとセキュリティ」➔「位置情報サービス」をタップ</p>
-                                <p>3. アプリ一覧から「夢日記」を選択</p>
-                                <p>4. 位置情報の利用許可を「なし」に設定する</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <details>
+      <summary>歩数などのデータが日記に反映されません。</summary>
+      <div class="answer">
+        <p>iPhoneの「設定」アプリ ➔「プライバシーとセキュリティ」 ➔「ヘルスケア」 ➔「夢日記」から、データの読み込みがすべて許可されているかご確認ください。</p>
+      </div>
+    </details>
 
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. ヘルスケアデータは手動で入力しても大丈夫ですか？</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600 space-y-2">
-                            <p>はい、ヘルスケアの各種データは手動で自由に入力・修正していただいて問題ありません。</p>
-                            <p>iPhoneの「ヘルスケア」アプリ側で追加・編集した歩数やワークアウトなどのデータも、本アプリは自動的に読み込んで日記の作成に反映させることができます。</p>
-                            <p class="text-xs text-gray-400">※データがうまく更新されない場合は、一度アプリを完全に閉じて再起動するか、手動の再生成ボタンをお試しください。</p>
-                        </div>
-                    </div>
-                </div>
+    <details>
+      <summary>すべてのライフログを連携（オンに）しないと日記は作れませんか？</summary>
+      <div class="answer">
+        <p>いいえ、ヘルスケアデータや位置情報など、一部のライフログデータをオフにしている、または一部しか使わない場合であっても、日記の自動生成・手動生成は問題なく実行されます。その場合は、許可されている残りのデータ（または文字入力した情報のみ）をもとに、AIが不自然にならないよう最適な文章を構築します。</p>
+      </div>
+    </details>
 
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. なぜ日記を「文字」ではなく「画像」でシェアするのですか？</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600">
-                            <p>SNS（XやInstagramなど）に投稿する際、文字数の制限を気にせず日記を丸ごとシェアできるようにするためです。通常のテキスト投稿では途中で文章が千切れてしまう長文日記でも、一枚の綺麗な画像に変換することで、文字数を一切気にせず1ポストに収めて発信できます。</p>
-                        </div>
-                    </div>
-                </div>
+    <details>
+      <summary>ライフログの数値（歩数や消費カロリーなど）が、日記の文章内で微妙にズレたり省略されたりするのはなぜですか？</summary>
+      <div class="answer">
+        <p>本アプリのAIは、入力された数値を機械的にコピーしたり厳密に計算したりして日記を作成しているわけではありません。</p>
+        <p>取得したライフログは、あくまで「その日がどんな一日だったか」の全体像をAIが把握し、自然で読み応えのある日記の文脈（ストーリー）を構築するための「参考値（目安）」として利用されます。</p>
+        <p>そのため、細かい数値が文章内で丸められたり（例: 7,843歩 ➔ 7,000歩以上歩いた、など）、文脈上あえて省略されたりすることがありますが、これはAIによる最適な文章表現の結果ですのでご安心ください。</p>
+      </div>
+    </details>
 
-                <div class="faq-block">
-                    <button class="w-full flex justify-between items-center px-4 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none" onclick="toggleFaq(this)">
-                        <span>Q. キャラ設定を変えると過去の日記も変わる？</span>
-                        <svg class="faq-icon w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                    <div class="faq-content bg-gray-50">
-                        <div class="px-4 pb-4 pt-2 text-sm text-gray-600">
-                            <p>いいえ、過去に作成されて保存された日記の本文はそのまま残ります。設定変更後に「新しく作成される日記」または「手動で再生成した日記」から、新しいキャラクターの口調が適用されます。</p>
-                        </div>
-                    </div>
-                </div>
+    <details>
+      <summary>行動タイムライン（滞在場所）をどうしても使用したくない。</summary>
+      <div class="answer">
+        <p>行動タイムラインはiPhoneの「位置情報サービス」を利用しています。このデータが日記に反映されるのを完全に防ぎたい（オフにしたい）場合は、以下の手順でiPhone自体の設定を変更してください。</p>
+        <p><strong>手順：</strong></p>
+        <div class="steps">
+          <p>1. iPhoneの「設定」アプリを開く</p>
+          <p>2.「プライバシーとセキュリティ」➔「位置情報サービス」をタップ</p>
+          <p>3. アプリ一覧から「夢日記」を選択</p>
+          <p>4. 位置情報の利用許可を「なし」に設定する</p>
+        </div>
+      </div>
+    </details>
 
-            </div>
-        </section>
+    <details>
+      <summary>ヘルスケアデータは手動で入力しても大丈夫ですか？</summary>
+      <div class="answer">
+        <p>はい、ヘルスケアの各種データは手動で自由に入力・修正していただいて問題ありません。</p>
+        <p>iPhoneの「ヘルスケア」アプリ側で追加・編集した歩数やワークアウトなどのデータも、本アプリは自動的に読み込んで日記の作成に反映させることができます。</p>
+        <p class="note">※データがうまく更新されない場合は、一度アプリを完全に閉じて再起動するか、手動の再生成ボタンをお試しください。</p>
+      </div>
+    </details>
 
-        <footer class="text-center text-xs text-gray-400 mt-12 pb-6">
-            <p>&copy; 2026 SUZUNOYA All Rights Reserved.</p>
-        </footer>
-    </div>
+    <details>
+      <summary>なぜ日記を「文字」ではなく「画像」でシェアするのですか？</summary>
+      <div class="answer">
+        <p>SNS（XやInstagramなど）に投稿する際、文字数の制限を気にせず日記を丸ごとシェアできるようにするためです。</p>
+        <p>通常のテキスト投稿では途中で文章が千切れてしまう長文日記でも、一枚の綺麗な画像に変換することで、文字数を一切気にせず1ポストに収めて発信できます。</p>
+      </div>
+    </details>
 
-    <script>
-        function toggleFaq(button) {
-            const block = button.parentElement;
-            const content = button.nextElementSibling;
-            
-            if (block.classList.contains('active')) {
-                block.classList.remove('active');
-                content.style.maxHeight = null;
-            } else {
-                // 他を閉じずにアコーディオンを開く(SwiftのDisclosureGroupと同じ挙動)
-                block.classList.add('active');
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-        }
-    </script>
+    <details>
+      <summary>キャラ設定を変えると過去の日記も変わる？</summary>
+      <div class="answer">
+        <p>いいえ、過去に作成されて保存された日記の本文はそのまま残ります。設定変更後に「新しく作成される日記」または「手動で再生成した日記」から、新しいキャラクターの口調が適用されます。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>日記を音声で読み上げると、漢字の読み方がおかしいことがあります。</summary>
+      <div class="answer">
+        <p>音声読み上げ機能は、iPhone（iOS）に標準で搭載されている読み上げエンジンを利用しています。</p>
+        <p>固有名詞や同じ漢字でも複数の読み方がある言葉（例：「今日」「市場」など）について、文脈によっては誤った読み方で発声されてしまう場合があります。</p>
+        <p class="note">これはAIが生成した日記本文自体の誤りではなく、iOSの読み上げエンジンの仕様によるものですので、あらかじめご了承ください。</p>
+      </div>
+    </details>
+
+  </div>
+
+</div>
+
+<div class="footer">
+  夢日記
+</div>
+
 </body>
 </html>
